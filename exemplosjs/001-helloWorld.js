@@ -29,4 +29,13 @@ console.log('Nome: ' + nome);
 console.log('O ' + nome + ' tem ' + idade + ' anos.');
 console.log('');;
 console.log('----------------------------');
-console.log(typeof(coresFavoritas));
+console.log(typeof(coresFavoritas)); 
+const ehArray = Array.isArray(coresFavoritas);
+
+console.log(ehArray === true ? 'É um array' : 'Não é um array');
+
+if (ehArray === true) {
+    console.log('É um array');
+} else {
+    console.log('Não é um array');
+}

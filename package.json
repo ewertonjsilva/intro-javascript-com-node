@@ -10,11 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/ewertonjsilva/intro-javascript-pami-b.git"
   },
-  "keywords": ["revisão", "java-script"],
+  "keywords": [
+    "revisão",
+    "java-script"
+  ],
   "author": "Ewerton José Silva",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ewertonjsilva/intro-javascript-pami-b/issues"
   },
-  "homepage": "https://github.com/ewertonjsilva/intro-javascript-pami-b#readme"
+  "homepage": "https://github.com/ewertonjsilva/intro-javascript-pami-b#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }

@@ -39,3 +39,10 @@ if (ehArray === true) {
 } else {
     console.log('Não é um array');
 }
+
+// mostrar valor de objeto
+console.log('Objeto: ');
+console.log(endereco); 
+console.log(endereco.bairro);
+console.log(endereco.logradouro + ' ' + endereco.nmLog + 
+' nº ' + endereco.num + ' - ' + endereco.bairro);

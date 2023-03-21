@@ -22,6 +22,8 @@ let opcao = 0;
 
 do {
     
+    console.log('');
+    console.log('---------------------------------');
     console.log('LISTA DE TAREFAS');
     console.log('1 - Listar tarefas pendentes');
     console.log('2 - Listar tarefas realizadas');
@@ -42,6 +44,7 @@ do {
                 console.log('---------------------------------');
             }            
         }
+        entrada();
     }
 
     if (opcao == 2) {
@@ -54,7 +57,8 @@ do {
                 console.log('REALIZADA: ' + tarefas[cont].realizada);
                 console.log('---------------------------------');
             }
-        }        
+        }   
+        entrada();
     }
 
     if (opcao == 3) {
@@ -66,12 +70,14 @@ do {
             tarefa: tarefa, 
             realizada: false
         });
+
+        entrada('Tarefa adicionada com sucesso!')
     }
 
     if (opcao == 4) {
         console.log('Concluir tarefa');
         for (let cont in tarefas) {
-            if (tarefas[cont].realizada == false) {
+            if (!tarefas[cont].realizada) {
                 console.log(tarefas[cont].id + ' - ' + tarefas[cont].tarefa);
             }                     
         }
@@ -79,10 +85,12 @@ do {
         const editar = concluida - 1;
         const txtTarefaEdit = tarefas[editar].tarefa;
         tarefas[editar] = {
-            id: editar, 
+            id: editar + 1, 
             tarefa: txtTarefaEdit, 
             realizada: true
         }
+
+        entrada('Tarefa concluída!');
     }
 
     if (opcao == 5) {
@@ -93,9 +101,23 @@ do {
             }                     
         }
         const excluir = entrada('Insira o ID da tarefa a ser excluída: ');
-        const t_excluir = excluir -1; 
+        const t_excluir = excluir; 
         let tempArray = tarefas;
-        tarefas = tempArray.filter( item => item.id != t_excluir);
+        tarefas = tempArray.filter( item => item.id != t_excluir); 
+
+        // resetar posições do array
+        let arrayReset = [];
+        for (const i in tarefas) {
+            arrayReset.push(
+                {
+                    id: arrayReset.length + 1, 
+                    tarefa: tarefas[i].tarefa, 
+                    realizada: tarefas[i].realizada                    
+                }
+            );
+        }
+        tarefas = arrayReset;
+        entrada('Tarefa excluída com sucesso!')
     }
 
 } while (opcao != 0); 
